@@ -6,32 +6,26 @@ import Divider from './Divider'
 const PHOTOS = [
   {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByMOHDsXHpmmeQcWJwddXinatB_YKaoPFuuWgL2NSjfXwMSgASTrM0haISTTI2JCTGJkN74s_gobt0gW5xuboRE2ad8UsKJVbyJPLWU3PeoGYHpwlf37VFrohFSi9Z0KjAEuofWkXuNRy6B38kG8v3eOH8FnGwSSc5KfyNBTG0MPGCb-PD2nhM6znK8D5rI0aVnQLjMOEHRxKoxwxwmTf74EifGQmMNdtDqa6qLSNeZvC-4Z_sTXUaG1-7AFfVb_-SR4aQzzW5PrZV',
-    alt: 'Khoảnh khắc lãng mạn – Văn Quang và Mỹ Linh',
     className: 'gallery-item tall',
   },
   {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByMOHDsXHpmmeQcWJwddXinatB_YKaoPFuuWgL2NSjfXwMSgASTrM0haISTTI2JCTGJkN74s_gobt0gW5xuboRE2ad8UsKJVbyJPLWU3PeoGYHpwlf37VFrohFSi9Z0KjAEuofWkXuNRy6B38kG8v3eOH8FnGwSSc5KfyNBTG0MPGCb-PD2nhM6znK8D5rI0aVnQLjMOEHRxKoxwxwmTf74EifGQmMNdtDqa6qLSNeZvC-4Z_sTXUaG1-7AFfVb_-SR4aQzzW5PrZV',
-    alt: 'Nụ cười hạnh phúc của cô dâu chú rể',
     className: 'gallery-item wide',
   },
   {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByMOHDsXHpmmeQcWJwddXinatB_YKaoPFuuWgL2NSjfXwMSgASTrM0haISTTI2JCTGJkN74s_gobt0gW5xuboRE2ad8UsKJVbyJPLWU3PeoGYHpwlf37VFrohFSi9Z0KjAEuofWkXuNRy6B38kG8v3eOH8FnGwSSc5KfyNBTG0MPGCb-PD2nhM6znK8D5rI0aVnQLjMOEHRxKoxwxwmTf74EifGQmMNdtDqa6qLSNeZvC-4Z_sTXUaG1-7AFfVb_-SR4aQzzW5PrZV',
-    alt: 'Bên nhau trọn đời',
     className: 'gallery-item',
   },
   {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCy7SsOrnbSxVT7_Nq4juervwK2qQne1klJRaTJ-NG3t2Q6jnTAe4Zr0qGPl72ZuA15MHtlPNFjmqJurGM3voVijzDhgeWKOQY-j2oYU_NBENqWcrAv_XmndN4HziWGiiOcNT9y-fKCcRRbCO2E4ftL3QcNjG6TN5i1siceyRNJegWVxrzsOsTzn0ykylqzXSqLMZxHJeK0bCAe2UqBBc3p_f63Kq_1r8mKcwaT0FqtIpVmB-LtBixlF6X0kJt5g9JNTEA3qLKKh1oN',
-    alt: 'Ánh mắt trìu mến dành cho nhau',
     className: 'gallery-item',
   },
   {
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuByMOHDsXHpmmeQcWJwddXinatB_YKaoPFuuWgL2NSjfXwMSgASTrM0haISTTI2JCTGJkN74s_gobt0gW5xuboRE2ad8UsKJVbyJPLWU3PeoGYHpwlf37VFrohFSi9Z0KjAEuofWkXuNRy6B38kG8v3eOH8FnGwSSc5KfyNBTG0MPGCb-PD2nhM6znK8D5rI0aVnQLjMOEHRxKoxwxwmTf74EifGQmMNdtDqa6qLSNeZvC-4Z_sTXUaG1-7AFfVb_-SR4aQzzW5PrZV',
-    alt: 'Tay trong tay bước vào lễ đường',
     className: 'gallery-item wide',
   },
   {
-    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCy7SsOrnbSxVT7_Nq4juervwK2qQne1klJRaTJ-NG3t2Q6jnTAe4Zr0qGPl72ZuA15MHtlPNFjmqJurGM3voVijzDhgeWKOQY-j2oYU_NBENqWcrAv_XmndN4HziWGiiOcNT9y-fKCcRRbCO2E4ftL3QcNjG6TN5i1siceyRNJegWVxrzsOsTzn0ykylqzXSqLMZxHJeK0bCAe2UqBBc3p_f63Kq_1r8mKcwaT0FqtIpVmB-LtBixlF6X0kJt5g9JNTEA3qLKKh1oN',
-    alt: 'Khoảnh khắc ngọt ngào đáng nhớ',
+    src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCy7SsOrnbSxVT7_Nq4juervwK2qQne1klJRaTJ-NG3t2Q6jnTAe4Zr0qGPl72ZuA15MHtlPNFjmqJurGM3voVijzDhgeWKOQY-j2oYU_NBENqWcrAv_XmndN4HziWGiiOcNT9y-fKCcRRbCO2E4ftL3QcNjG6TN5i1siceyRNJegWVxrzsOsTzn0ykylqzXSqLMZxHJeK0bCAe2UqBBc3p_f63Kq_1r8mKcwaT0FqtIpVmB-LtBixlF6X0kJt5g9JNTEA3qLKKh1oN',    
     className: 'gallery-item',
   },
 ]
