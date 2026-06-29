@@ -36,7 +36,7 @@ export default function Schedule() {
           {/* Right: photo */}
           <div className="schedule-img-wrap reveal-right" ref={imgRef}>
             <img
-              src="https://lh3.googleusercontent.com/aida/AP1WRLu9sGad53TRQkBW_oqPVJj5OF1tUvSwjlBA_046hqg3iaBPtadAmVfLCKmocr8FoOCO2JT9K0D2Qi1SkmKhLESxFJCPMUQhADtHgHj_EJPS2Ps59Kz7HGBZ9_Yu0RSlzMEn3dUwqbNfMAsq7IHaCqptw9Bve8w5AxocAm2yGn47trpWakxGk8pmolxDAxAiKMNBFWzn7psgQkFrLSmDVVfA-eMhGxhQ46OG0kuvepE0_1Y1aA8UEVJOzH8V"
+              src="/src/assets/678.jpg"
               alt="Cô dâu và chú rể"
               loading="lazy"
             />
