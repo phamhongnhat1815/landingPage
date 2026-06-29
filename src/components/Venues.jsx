@@ -12,7 +12,7 @@ const VENUES = [
     address:  'Tổ dân phố Hạnh Phúc, Phường Nguyệt Viên, Tỉnh Thanh Hoá',
     mapSrc:   'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.2148723609594!2d105.8359722!3d19.8039722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDQ4JzE0LjMiTiAxMDXCsDUwJzA5LjUiRQ!5e1!3m2!1svi!2s!4v1782378515822!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin',
     mapsLink: "https://www.google.com/maps/place/19%C2%B048'14.3%22N+105%C2%B050'09.5%22E/@19.803974,105.8333851,828m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d19.803974!4d105.83596?entry=ttu&g_ep=EgoyMDI2MDYyMi4wIKXMDSoASAFQAw%3D%3D",
-    time:     'Lễ ăn hỏi: 08:00 sáng, 22/07/2025',
+    time:     'Lễ ăn hỏi: 08:00 sáng, 22/07/2026',
     note:     'Lễ ăn hỏi và gia đình nhà trai đến đón dâu tại địa chỉ này',
     copyAddr: 'Thôn Hạnh Phúc, Phường Nguyệt Viên, Tỉnh Thanh Hoá',
   },

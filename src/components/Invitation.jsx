@@ -22,7 +22,7 @@ export default function Invitation() {
         <div ref={ref2} className="reveal">
           <div className="invite-cards">
             <div className="invite-card-item">
-              <p className="invite-card-label">Thứ Hai</p>
+              <p className="invite-card-label">Thứ Sáu</p>
               <p className="invite-card-value">24</p>
               <p className="invite-card-label" style={{ marginTop: '0.3rem' }}>Tháng 07</p>
             </div>

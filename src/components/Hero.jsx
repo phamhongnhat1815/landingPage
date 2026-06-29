@@ -7,7 +7,7 @@ export default function Hero() {
     const onScroll = () => {
       if (!bgRef.current) return
       if (window.scrollY < window.innerHeight) {
-        bgRef.current.style.transform = `scale(1.06) translateY(${window.scrollY * 0.18}px)`
+        bgRef.current.style.transform = `scale(1.06) translate3d(0, ${window.scrollY * 0.18}px, 0)`
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true })

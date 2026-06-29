@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import useReveal from '../hooks/useReveal'
 
-const WEDDING_DATE = new Date('2026-07-22T00:00:00+07:00').getTime()
+const WEDDING_DATE = new Date('2026-07-24T10:00:00+07:00').getTime()
 
 function padTwo(n) {
   return String(Math.max(0, n)).padStart(2, '0')

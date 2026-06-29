@@ -2,19 +2,35 @@
    DESIGN TOKENS
 ============================================================ */
 :root {
-  --cream:        #FAF7F0;
-  --cream-dark:   #F2EBE0;
-  --cream-mid:    #EDE4D5;
-  --gold:         #C8A96A;
-  --gold-light:   #DFC48E;
-  --gold-dark:    #9E7E45;
-  --wine:         #7C2D3C;
-  --wine-dark:    #5C1E2A;
-  --wine-light:   #9E3D50;
-  --charcoal:     #1E1E1E;
-  --charcoal-mid: #3A3330;
-  --muted:        #8A7D72;
-  --white:        #FFFFFF;
+  --cream-h: 42;
+  --cream-s: 33%;
+  --cream-l: 96%;
+  --cream: HSL(var(--cream-h), var(--cream-s), var(--cream-l)); /* #FAF7F0 */
+  --cream-dark: HSL(var(--cream-h), var(--cream-s), 91%);
+  --cream-mid: HSL(var(--cream-h), var(--cream-s), 85%);
+
+  --gold-h: 40;
+  --gold-s: 48%;
+  --gold-l: 60%;
+  --gold: HSL(var(--gold-h), var(--gold-s), var(--gold-l)); /* #C8A96A */
+  --gold-light: HSL(var(--gold-h), var(--gold-s), 75%);
+  --gold-dark: HSL(var(--gold-h), var(--gold-s), 45%);
+
+  --wine-h: 349;
+  --wine-s: 47%;
+  --wine-l: 33%;
+  --wine: HSL(var(--wine-h), var(--wine-s), var(--wine-l)); /* #7C2D3C */
+  --wine-dark: HSL(var(--wine-h), var(--wine-s), 22%);
+  --wine-light: HSL(var(--wine-h), var(--wine-s), 43%);
+
+  --charcoal-h: 20;
+  --charcoal-s: 5%;
+  --charcoal-l: 12%;
+  --charcoal: HSL(var(--charcoal-h), var(--charcoal-s), var(--charcoal-l)); /* #1E1E1E */
+  --charcoal-mid: HSL(var(--charcoal-h), var(--charcoal-s), 21%);
+
+  --muted: HSL(var(--charcoal-h), 10%, 48%);
+  --white: #FFFFFF;
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-script:  'Pinyon Script', cursive;
@@ -22,7 +38,7 @@
 
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-inout:  cubic-bezier(0.4, 0, 0.2, 1);
-  --transition:  0.4s var(--ease-inout);
+  --transition:  0.5s var(--ease-out);
 }
 
 /* ============================================================
@@ -37,6 +53,21 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cream-mid);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
 }
 
 body {
@@ -71,8 +102,8 @@ button {
 ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(36px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+  transform: translateY(40px);
+  transition: opacity 1.2s var(--ease-out), transform 1.2s var(--ease-out);
 }
 .reveal.visible {
   opacity: 1;
@@ -80,8 +111,8 @@ button {
 }
 .reveal-left {
   opacity: 0;
-  transform: translateX(-36px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+  transform: translateX(-40px);
+  transition: opacity 1.2s var(--ease-out), transform 1.2s var(--ease-out);
 }
 .reveal-left.visible {
   opacity: 1;
@@ -89,12 +120,21 @@ button {
 }
 .reveal-right {
   opacity: 0;
-  transform: translateX(36px);
-  transition: opacity 0.75s var(--ease-out), transform 0.75s var(--ease-out);
+  transform: translateX(40px);
+  transition: opacity 1.2s var(--ease-out), transform 1.2s var(--ease-out);
 }
 .reveal-right.visible {
   opacity: 1;
   transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(20px);
+  transition: opacity 1.2s var(--ease-out), transform 1.2s var(--ease-out);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 /* ============================================================
