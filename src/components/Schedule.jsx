@@ -37,7 +37,6 @@ export default function Schedule() {
           <div className="schedule-img-wrap reveal-right" ref={imgRef}>
             <img
               src="/src/assets/678.jpg"
-              alt="Cô dâu và chú rể"
               loading="lazy"
             />
             <div className="schedule-badge">

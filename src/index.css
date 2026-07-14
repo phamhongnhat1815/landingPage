@@ -16,12 +16,12 @@
   --gold-light: HSL(var(--gold-h), var(--gold-s), 75%);
   --gold-dark: HSL(var(--gold-h), var(--gold-s), 45%);
 
-  --wine-h: 349;
-  --wine-s: 47%;
-  --wine-l: 33%;
-  --wine: HSL(var(--wine-h), var(--wine-s), var(--wine-l)); /* #7C2D3C */
-  --wine-dark: HSL(var(--wine-h), var(--wine-s), 22%);
-  --wine-light: HSL(var(--wine-h), var(--wine-s), 43%);
+  --wine-h: 350;
+  --wine-s: 75%;
+  --wine-l: 65%;
+  --wine: HSL(var(--wine-h), var(--wine-s), var(--wine-l)); /* #EB6278 Bright Rose */
+  --wine-dark: HSL(var(--wine-h), var(--wine-s), 50%);
+  --wine-light: HSL(var(--wine-h), var(--wine-s), 75%);
 
   --charcoal-h: 20;
   --charcoal-s: 5%;
