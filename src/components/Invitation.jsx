@@ -30,10 +30,7 @@ export default function Invitation() {
               <p className="invite-card-label">Năm</p>
               <p className="invite-card-value">2026</p>
             </div>
-            <div className="invite-card-item">
-              <p className="invite-card-label">Lễ thành hôn</p>
-              <p className="invite-card-value">10:00</p>
-            </div>
+            
           </div>
         </div>
       </div>
