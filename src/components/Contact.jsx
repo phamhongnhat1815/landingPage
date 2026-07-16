@@ -15,7 +15,7 @@ export default function Contact() {
       <div className="container">
         <div ref={ref1} className="reveal">
           <p className="section-label" style={{ color: 'rgba(255,255,255,0.25)' }}>Liên hệ</p>
-          <p className="contact-names">Văn Quang &amp; Mỹ Linh</p>
+          <p className="contact-names">Văn Quang &amp; Nguyễn Linh</p>
           <p className="contact-date-line">24 · 07 · 2026 &nbsp;·&nbsp; Nguyệt Viên</p>
         </div>
 
@@ -31,7 +31,7 @@ export default function Contact() {
 
         <div ref={ref3} className="reveal">
           <p className="footer-quote">Chúng tôi mong chờ ngày vui bên bạn!</p>
-          <p className="footer-copy">© 2025 Văn Quang &amp; Mỹ Linh · Made with 💛</p>
+          <p className="footer-copy">© 2025 Văn Quang &amp; Nguyễn Linh · Made with 💛</p>
         </div>
       </div>
     </section>
