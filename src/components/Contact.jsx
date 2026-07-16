@@ -1,8 +1,8 @@
 import useReveal from '../hooks/useReveal'
 
 const CONTACTS = [
-  { role: 'Chú rể',        name: 'Văn Quang',   phone: '0901 234 567' },
-  { role: 'Cô dâu',        name: 'Mỹ Linh',    phone: '0912 345 678' },
+  { role: 'Chú rể',        name: 'Văn Quang',   phone: '0865619974' },
+  { role: 'Cô dâu',        name: 'Nguyễn Linh',    phone: '0912 345 678' },
 ]
 
 export default function Contact() {
