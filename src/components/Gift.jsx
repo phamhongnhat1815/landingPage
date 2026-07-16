@@ -5,24 +5,22 @@ import { useToast } from '../hooks/useToast'
 
 export default function Gift() {
   const headerRef = useReveal()
-  const btnRef = useReveal(0.15)
+  const btnRef    = useReveal(0.15)
   const showToast = useToast()
-  const [isOpen, setIsOpen] = useState(false)
-  const [copiedGroom, setCopiedGroom] = useState(false)
-  const [copiedBride, setCopiedBride] = useState(false)
+  const [isOpen,       setIsOpen]       = useState(false)
+  const [copiedGroom,  setCopiedGroom]  = useState(false)
+  const [copiedBride,  setCopiedBride]  = useState(false)
 
   const accounts = {
     groom: {
-      bank: 'Ngân hàng Techcombank',
+      bank:   'Ngân hàng Techcombank',
       number: '1903 5462 8990 12',
       holder: 'NGUYỄN VĂN HÙNG',
-      label: 'Chú rể Văn Hùng',
     },
     bride: {
-      bank: 'Ngân hàng Vietcombank',
+      bank:   'Ngân hàng Vietcombank',
       number: '1012 3456 78',
       holder: 'LÊ MỸ LINH',
-      label: 'Cô dâu Mỹ Linh',
     },
   }
 
@@ -38,9 +36,7 @@ export default function Gift() {
           setTimeout(() => setCopiedBride(false), 2000)
         }
       })
-      .catch(() => {
-        showToast('Không thể sao chép.')
-      })
+      .catch(() => showToast('Không thể sao chép.'))
   }
 
   return (
@@ -53,14 +49,14 @@ export default function Gift() {
             <span className="divider-dot" aria-hidden="true" />
           </div>
           <p className="gift-intro">
-            Sự hiện diện của quý vị là món quà lớn nhất dành cho chúng tôi. 
+            Sự hiện diện của quý vị là món quà lớn nhất dành cho chúng tôi.
             Tuy nhiên, nếu quý vị muốn gửi một chút quà mừng, xin vui lòng xem thông tin bên dưới.
           </p>
         </div>
 
         <div ref={btnRef} className="gift-action-wrap reveal">
           <button onClick={() => setIsOpen(true)} className="btn btn-gold btn-gift-trigger">
-            <GiftIcon size={18} />
+            <GiftIcon size={17} />
             Mừng Cưới Đến Cô Dâu &amp; Chú Rể
           </button>
         </div>
@@ -68,34 +64,47 @@ export default function Gift() {
 
       {/* Modal */}
       {isOpen && (
-        <div className="gift-modal-overlay" onClick={() => setIsOpen(false)} role="dialog" aria-modal="true">
-          <div className="gift-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="gift-modal-close" onClick={() => setIsOpen(false)} aria-label="Đóng modal">
-              <X size={20} />
+        <div
+          className="gift-modal-overlay"
+          onClick={() => setIsOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Thông tin mừng cưới"
+        >
+          <div className="gift-modal" onClick={e => e.stopPropagation()}>
+            <button
+              className="gift-modal-close"
+              onClick={() => setIsOpen(false)}
+              aria-label="Đóng"
+            >
+              <X size={18} />
             </button>
 
             <div className="gift-modal-header">
               <div className="gift-modal-icon-wrap">
-                <GiftIcon size={32} className="text-gold" />
+                <GiftIcon size={30} className="text-gold" />
               </div>
               <h3 className="gift-modal-title">Quà Mừng Cưới</h3>
               <p className="gift-modal-subtitle">Gửi lời chúc phúc và quà mừng đến cặp đôi</p>
             </div>
 
             <div className="gift-modal-grid">
-              {/* Groom's Account */}
+              {/* Groom */}
               <div className="gift-card-account">
                 <p className="gift-card-badge groom">Mừng Chú Rể</p>
                 <div className="gift-card-body">
                   <p className="gift-bank-name">{accounts.groom.bank}</p>
                   <div className="gift-number-wrap">
                     <span className="gift-number">{accounts.groom.number}</span>
-                    <button 
-                      className="btn-copy-account" 
+                    <button
+                      className="btn-copy-account"
                       onClick={() => copyToClipboard(accounts.groom.number, 'groom')}
                       title="Sao chép số tài khoản"
+                      aria-label="Sao chép số tài khoản chú rể"
                     >
-                      {copiedGroom ? <Check size={16} className="text-success" /> : <Copy size={16} />}
+                      {copiedGroom
+                        ? <Check size={15} className="text-success" />
+                        : <Copy size={15} />}
                     </button>
                   </div>
                   <p className="gift-holder-label">Chủ tài khoản:</p>
@@ -103,19 +112,22 @@ export default function Gift() {
                 </div>
               </div>
 
-              {/* Bride's Account */}
+              {/* Bride */}
               <div className="gift-card-account">
                 <p className="gift-card-badge bride">Mừng Cô Dâu</p>
                 <div className="gift-card-body">
                   <p className="gift-bank-name">{accounts.bride.bank}</p>
                   <div className="gift-number-wrap">
                     <span className="gift-number">{accounts.bride.number}</span>
-                    <button 
-                      className="btn-copy-account" 
+                    <button
+                      className="btn-copy-account"
                       onClick={() => copyToClipboard(accounts.bride.number, 'bride')}
                       title="Sao chép số tài khoản"
+                      aria-label="Sao chép số tài khoản cô dâu"
                     >
-                      {copiedBride ? <Check size={16} className="text-success" /> : <Copy size={16} />}
+                      {copiedBride
+                        ? <Check size={15} className="text-success" />
+                        : <Copy size={15} />}
                     </button>
                   </div>
                   <p className="gift-holder-label">Chủ tài khoản:</p>
@@ -125,9 +137,10 @@ export default function Gift() {
             </div>
 
             <div className="gift-modal-footer">
-              <Heart size={20} className="text-heart" fill="var(--wine)" />
+              <Heart size={18} className="text-heart" fill="currentColor" />
               <p className="gift-thanks">
-                Cảm ơn sự yêu thương và chúc phúc từ tận đáy lòng của Quý khách dành cho tổ ấm mới của chúng tôi!
+                Cảm ơn sự yêu thương và chúc phúc từ tận đáy lòng của Quý khách
+                dành cho tổ ấm mới của chúng tôi!
               </p>
             </div>
           </div>

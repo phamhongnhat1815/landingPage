@@ -13,8 +13,8 @@ function getTimeLeft() {
   return {
     days:    Math.floor(diff / 86400000),
     hours:   Math.floor((diff % 86400000) / 3600000),
-    minutes: Math.floor((diff % 3600000) / 60000),
-    seconds: Math.floor((diff % 60000) / 1000),
+    minutes: Math.floor((diff % 3600000)  / 60000),
+    seconds: Math.floor((diff % 60000)    / 1000),
   }
 }
 
@@ -32,32 +32,27 @@ export default function Countdown() {
     <section id="countdown" className="countdown" aria-label="Đếm ngược đến ngày cưới">
       <div className="container">
         <div ref={headerRef} className="countdown-header reveal">
-          <p className="section-label" style={{ color: 'var(--gold)' }}>Đếm ngược đến ngày cưới</p>
+          <p className="section-label" style={{ color: 'var(--gold-light)' }}>
+            Đếm ngược đến ngày cưới
+          </p>
           <h2 className="section-title light">Còn Bao Lâu Nữa?</h2>
         </div>
 
-        <div ref={gridRef} className="countdown-grid reveal" aria-live="polite" aria-atomic="true">
+        <div
+          ref={gridRef}
+          className="countdown-grid reveal"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           {time ? (
             <>
-              <div className="cd-item">
-                <span className="cd-number">{padTwo(time.days)}</span>
-                <span className="cd-label">Ngày</span>
-              </div>
+              <CountItem value={padTwo(time.days)}    label="Ngày"  />
               <span className="cd-colon" aria-hidden="true">:</span>
-              <div className="cd-item">
-                <span className="cd-number">{padTwo(time.hours)}</span>
-                <span className="cd-label">Giờ</span>
-              </div>
+              <CountItem value={padTwo(time.hours)}   label="Giờ"   />
               <span className="cd-colon" aria-hidden="true">:</span>
-              <div className="cd-item">
-                <span className="cd-number">{padTwo(time.minutes)}</span>
-                <span className="cd-label">Phút</span>
-              </div>
+              <CountItem value={padTwo(time.minutes)} label="Phút"  />
               <span className="cd-colon" aria-hidden="true">:</span>
-              <div className="cd-item">
-                <span className="cd-number">{padTwo(time.seconds)}</span>
-                <span className="cd-label">Giây</span>
-              </div>
+              <CountItem value={padTwo(time.seconds)} label="Giây"  />
             </>
           ) : (
             <p className="countdown-done">Hôm nay là ngày cưới!</p>
@@ -65,5 +60,14 @@ export default function Countdown() {
         </div>
       </div>
     </section>
+  )
+}
+
+function CountItem({ value, label }) {
+  return (
+    <div className="cd-item">
+      <span className="cd-number">{value}</span>
+      <span className="cd-label">{label}</span>
+    </div>
   )
 }

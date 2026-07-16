@@ -17,35 +17,25 @@ const PHOTOS = [
 ]
 
 export default function Gallery() {
-  const headerRef = useReveal()
-  const gridRef   = useReveal(0.2)
+  const headerRef  = useReveal()
+  const gridRef    = useReveal(0.2)
   const [photoIndex, setPhotoIndex] = useState(null)
-  const sliderRef = useRef(null)
+  const sliderRef  = useRef(null)
 
-  const openLightbox = (index) => setPhotoIndex(index)
-  const closeLightbox = () => setPhotoIndex(null)
+  const openLightbox  = (i)  => setPhotoIndex(i)
+  const closeLightbox = ()   => setPhotoIndex(null)
 
   const showPrev = (e) => {
     e.stopPropagation()
-    setPhotoIndex((prev) => (prev === 0 ? PHOTOS.length - 1 : prev - 1))
+    setPhotoIndex(prev => (prev === 0 ? PHOTOS.length - 1 : prev - 1))
   }
-
   const showNext = (e) => {
     e.stopPropagation()
-    setPhotoIndex((prev) => (prev === PHOTOS.length - 1 ? 0 : prev + 1))
+    setPhotoIndex(prev => (prev === PHOTOS.length - 1 ? 0 : prev + 1))
   }
 
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -320, behavior: 'smooth' })
-    }
-  }
-
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 320, behavior: 'smooth' })
-    }
-  }
+  const scrollLeft  = () => sliderRef.current?.scrollBy({ left: -340, behavior: 'smooth' })
+  const scrollRight = () => sliderRef.current?.scrollBy({ left:  340, behavior: 'smooth' })
 
   return (
     <section id="gallery" className="gallery" aria-label="Bộ ảnh cưới">
@@ -58,12 +48,20 @@ export default function Gallery() {
 
         <div ref={gridRef} className="gallery-slider-container reveal">
           <button className="slider-nav-btn prev" onClick={scrollLeft} aria-label="Cuộn trái">
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
-          
+
           <div className="gallery-slider" ref={sliderRef}>
             {PHOTOS.map((p, i) => (
-              <div key={i} className="gallery-slider-item" onClick={() => openLightbox(i)}>
+              <div
+                key={i}
+                className="gallery-slider-item"
+                onClick={() => openLightbox(i)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Xem ảnh ${i + 1}`}
+                onKeyDown={e => e.key === 'Enter' && openLightbox(i)}
+              >
                 <img src={p.src} alt={p.alt} loading="lazy" />
                 <div className="gallery-hover-overlay">
                   <span className="gallery-hover-text">Xem chi tiết</span>
@@ -73,34 +71,38 @@ export default function Gallery() {
           </div>
 
           <button className="slider-nav-btn next" onClick={scrollRight} aria-label="Cuộn phải">
-            <ChevronRight size={24} />
+            <ChevronRight size={22} />
           </button>
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox */}
       {photoIndex !== null && (
-        <div className="lightbox-overlay" onClick={closeLightbox} role="dialog" aria-modal="true">
-          <button className="lightbox-close" onClick={closeLightbox} aria-label="Đóng ảnh phóng to">
-            <X size={24} />
+        <div
+          className="lightbox-overlay"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Ảnh phóng to"
+        >
+          <button className="lightbox-close" onClick={closeLightbox} aria-label="Đóng">
+            <X size={20} />
           </button>
 
           <button className="lightbox-btn prev" onClick={showPrev} aria-label="Ảnh trước">
-            <ChevronLeft size={36} />
+            <ChevronLeft size={28} />
           </button>
 
-          <div className="lightbox-img-wrap" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-img-wrap" onClick={e => e.stopPropagation()}>
             <img src={PHOTOS[photoIndex].src} alt={PHOTOS[photoIndex].alt} />
             <p className="lightbox-caption">{PHOTOS[photoIndex].alt}</p>
           </div>
 
           <button className="lightbox-btn next" onClick={showNext} aria-label="Ảnh sau">
-            <ChevronRight size={36} />
+            <ChevronRight size={28} />
           </button>
         </div>
       )}
     </section>
   )
 }
-
-

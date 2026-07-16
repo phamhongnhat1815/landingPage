@@ -2,9 +2,24 @@ import { Sparkles, GlassWater, Heart } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
 
 const EVENTS = [
-  { time: '22/7', icon: Sparkles, name: 'Lễ Nạp Tài',    note: 'Nghi thức ăn hỏi, trao lễ vật và nhận lễ vật, đánh dấu lễ cưới chính thức diễn ra.' },
-  { time: '23/7', icon: GlassWater, name: 'Tiệc Cưới',       note: 'Khai tiệc mừng hạnh phúc cùng gia đình và bạn bè với những món ăn đặc sắc.' },
-  { time: '24/7', icon: Heart, name: 'Lễ Thành Hôn',      note: 'Nghi thức trao nhẫn và lời thề ước tại sảnh chính.' },
+  {
+    time:  '22/7',
+    icon:  Sparkles,
+    name:  'Lễ Nạp Tài',
+    note:  'Nghi thức ăn hỏi, trao lễ vật và nhận lễ vật, đánh dấu lễ cưới chính thức diễn ra.',
+  },
+  {
+    time:  '23/7',
+    icon:  GlassWater,
+    name:  'Tiệc Cưới',
+    note:  'Khai tiệc mừng hạnh phúc cùng gia đình và bạn bè với những món ăn đặc sắc.',
+  },
+  {
+    time:  '24/7',
+    icon:  Heart,
+    name:  'Lễ Thành Hôn',
+    note:  'Nghi thức trao nhẫn và lời thề ước tại sảnh chính.',
+  },
 ]
 
 export default function Schedule() {
@@ -22,23 +37,27 @@ export default function Schedule() {
               <h2 className="section-title">Lịch Trình Lễ Cưới</h2>
               <div className="divider" style={{ justifyContent: 'flex-start', marginLeft: 0 }}>
                 <span className="divider-dot" aria-hidden="true" />
-                <div style={{ flex: 1, maxWidth: 72, height: 1, background: 'linear-gradient(to right, var(--gold), transparent)' }} />
+                <div
+                  style={{
+                    flex: 1,
+                    maxWidth: 80,
+                    height: 1,
+                    background: 'linear-gradient(to right, var(--gold-pale), transparent)',
+                  }}
+                />
               </div>
             </div>
 
             <div className="schedule-list">
               {EVENTS.map((ev, i) => (
-                <ScheduleItem key={ev.name} ev={ev} delay={i * 0.12} />
+                <ScheduleItem key={ev.name} ev={ev} delay={i * 0.13} />
               ))}
             </div>
           </div>
 
           {/* Right: photo */}
           <div className="schedule-img-wrap reveal-right" ref={imgRef}>
-            <img
-              src="/src/assets/678.jpg"
-              loading="lazy"
-            />
+            <img src="/src/assets/678.jpg" alt="Ảnh cưới" loading="lazy" />
             <div className="schedule-badge">
               <p className="schedule-badge-day">24</p>
               <p className="schedule-badge-month">Tháng 07 · 2026</p>
@@ -51,13 +70,13 @@ export default function Schedule() {
 }
 
 function ScheduleItem({ ev, delay }) {
-  const ref = useReveal(delay)
+  const ref  = useReveal(delay)
   const Icon = ev.icon
   return (
     <div ref={ref} className="schedule-item reveal">
       <span className="schedule-time">{ev.time}</span>
       <div className="schedule-dot">
-        <Icon size={16} className="text-white" />
+        <Icon size={15} color="white" strokeWidth={1.5} />
       </div>
       <div>
         <p className="schedule-name">{ev.name}</p>

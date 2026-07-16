@@ -7,6 +7,12 @@ export default function Invitation() {
 
   return (
     <section id="invitation" className="invitation" aria-label="Lời mời">
+      {/* Corner ornaments */}
+      <span className="invitation-ornament tl" aria-hidden="true" />
+      <span className="invitation-ornament tr" aria-hidden="true" />
+      <span className="invitation-ornament bl" aria-hidden="true" />
+      <span className="invitation-ornament br" aria-hidden="true" />
+
       <div className="invitation-inner">
         <div ref={ref1} className="reveal">
           <p className="section-label">Thiệp mời</p>
@@ -24,17 +30,15 @@ export default function Invitation() {
             <div className="invite-card-item">
               <p className="invite-card-label">Thứ Sáu</p>
               <p className="invite-card-value">24</p>
-              <p className="invite-card-label" style={{ marginTop: '0.3rem' }}>Tháng 07</p>
+              <p className="invite-card-label" style={{ marginTop: '0.4rem' }}>Tháng 07</p>
             </div>
             <div className="invite-card-item">
               <p className="invite-card-label">Năm</p>
               <p className="invite-card-value">2026</p>
             </div>
-            
           </div>
         </div>
       </div>
     </section>
   )
 }
-
