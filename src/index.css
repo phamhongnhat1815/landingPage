@@ -1,35 +1,39 @@
 /* ============================================================
-   DESIGN TOKENS
+   DESIGN TOKENS — Sage Teal Wedding Palette
 ============================================================ */
 :root {
-  --cream-h: 42;
-  --cream-s: 33%;
-  --cream-l: 96%;
-  --cream: HSL(var(--cream-h), var(--cream-s), var(--cream-l)); /* #FAF7F0 */
-  --cream-dark: HSL(var(--cream-h), var(--cream-s), 91%);
-  --cream-mid: HSL(var(--cream-h), var(--cream-s), 85%);
+  /* Pearl / Base — nền trắng ấm */
+  --cream-h: 165;
+  --cream-s: 30%;
+  --cream-l: 97%;
+  --cream: HSL(var(--cream-h), var(--cream-s), var(--cream-l)); /* #F3FAFA */
+  --cream-dark: HSL(var(--cream-h), 25%, 94%);
+  --cream-mid:  HSL(var(--cream-h), 20%, 88%);
 
+  /* Gold / Champagne — accent sang trọng */
   --gold-h: 40;
-  --gold-s: 48%;
-  --gold-l: 60%;
-  --gold: HSL(var(--gold-h), var(--gold-s), var(--gold-l)); /* #C8A96A */
-  --gold-light: HSL(var(--gold-h), var(--gold-s), 75%);
-  --gold-dark: HSL(var(--gold-h), var(--gold-s), 45%);
+  --gold-s: 50%;
+  --gold-l: 58%;
+  --gold: HSL(var(--gold-h), var(--gold-s), var(--gold-l));
+  --gold-light: HSL(var(--gold-h), 42%, 74%);
+  --gold-dark:  HSL(var(--gold-h), 50%, 42%);
 
-  --wine-h: 350;
-  --wine-s: 75%;
-  --wine-l: 65%;
-  --wine: HSL(var(--wine-h), var(--wine-s), var(--wine-l)); /* #EB6278 Bright Rose */
-  --wine-dark: HSL(var(--wine-h), var(--wine-s), 50%);
-  --wine-light: HSL(var(--wine-h), var(--wine-s), 75%);
+  /* Sage Teal — màu chủ đạo: xanh ngọc thanh lịch */
+  --wine-h: 174;
+  --wine-s: 42%;
+  --wine-l: 42%;
+  --wine: HSL(var(--wine-h), var(--wine-s), var(--wine-l));       /* #3D9E91 Sage Teal */
+  --wine-dark: HSL(var(--wine-h), 45%, 30%);                      /* #296D63 Deep Teal */
+  --wine-light: HSL(var(--wine-h), 38%, 78%);                     /* #9DD4CC Mint */
 
-  --charcoal-h: 20;
-  --charcoal-s: 5%;
-  --charcoal-l: 12%;
-  --charcoal: HSL(var(--charcoal-h), var(--charcoal-s), var(--charcoal-l)); /* #1E1E1E */
-  --charcoal-mid: HSL(var(--charcoal-h), var(--charcoal-s), 21%);
+  /* Text — ấm, dễ đọc */
+  --charcoal-h: 174;
+  --charcoal-s: 12%;
+  --charcoal-l: 18%;
+  --charcoal: HSL(var(--charcoal-h), var(--charcoal-s), var(--charcoal-l)); /* #283D3B */
+  --charcoal-mid: HSL(var(--charcoal-h), 10%, 32%);
 
-  --muted: HSL(var(--charcoal-h), 10%, 48%);
+  --muted: HSL(var(--charcoal-h), 10%, 50%);
   --white: #FFFFFF;
 
   --font-display: 'Playfair Display', Georgia, serif;
@@ -210,13 +214,13 @@ button {
 }
 
 .btn-primary {
-  background: var(--wine);
+  background: var(--wine-dark);
   color: var(--white);
 }
 .btn-primary:hover {
-  background: var(--wine-dark);
+  background: HSL(174, 45%, 24%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(124, 45, 60, 0.35);
+  box-shadow: 0 10px 24px rgba(41, 109, 99, 0.38);
 }
 
 .btn-outline {
