@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import heroBg from '../assets/6.jpg'
 
 export default function Hero() {
   const bgRef      = useRef(null)
@@ -51,7 +52,7 @@ export default function Hero() {
   return (
     <section id="hero" className="hero" aria-label="Hero">
       {/* Background image with scroll parallax */}
-      <div className="hero-bg" ref={bgRef} />
+      <div className="hero-bg" ref={bgRef} style={{ backgroundImage: `url(${heroBg})` }} />
 
       {/* Dark cinematic overlay */}
       <div className="hero-overlay" />

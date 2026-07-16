@@ -8,8 +8,10 @@ export default function Gift() {
   const btnRef    = useReveal(0.15)
   const showToast = useToast()
   const [isOpen,       setIsOpen]       = useState(false)
+  const [activeTab,    setActiveTab]    = useState('groom') // 'groom' | 'bride'
   const [copiedGroom,  setCopiedGroom]  = useState(false)
   const [copiedBride,  setCopiedBride]  = useState(false)
+  const [animating,    setAnimating]    = useState(false)
 
   const accounts = {
     groom: {
@@ -38,6 +40,19 @@ export default function Gift() {
       })
       .catch(() => showToast('Không thể sao chép.'))
   }
+
+  const switchTab = (tab) => {
+    if (tab === activeTab || animating) return
+    setAnimating(true)
+    setTimeout(() => {
+      setActiveTab(tab)
+      setAnimating(false)
+    }, 220)
+  }
+
+  const current = accounts[activeTab]
+  const isCopied = activeTab === 'groom' ? copiedGroom : copiedBride
+  const copyType = activeTab
 
   return (
     <section id="gift" className="gift-section" aria-label="Thông tin mừng cưới">
@@ -71,7 +86,7 @@ export default function Gift() {
           aria-modal="true"
           aria-label="Thông tin mừng cưới"
         >
-          <div className="gift-modal" onClick={e => e.stopPropagation()}>
+          <div className="gift-modal gift-modal--tabbed" onClick={e => e.stopPropagation()}>
             <button
               className="gift-modal-close"
               onClick={() => setIsOpen(false)}
@@ -80,58 +95,65 @@ export default function Gift() {
               <X size={18} />
             </button>
 
-            <div className="gift-modal-header">
-              <div className="gift-modal-icon-wrap">
-                <GiftIcon size={30} className="text-gold" />
-              </div>
-              <h3 className="gift-modal-title">Quà Mừng Cưới</h3>
-              <p className="gift-modal-subtitle">Gửi lời chúc phúc và quà mừng đến cặp đôi</p>
+            {/* Tab switcher */}
+            <div className="gift-tab-switcher" role="tablist">
+              <button
+                role="tab"
+                aria-selected={activeTab === 'groom'}
+                className={`gift-tab-btn${activeTab === 'groom' ? ' active' : ''}`}
+                onClick={() => switchTab('groom')}
+                id="tab-groom"
+              >
+                <span className="gift-tab-icon">♙</span>
+                Mừng Chú Rể
+              </button>
+              <button
+                role="tab"
+                aria-selected={activeTab === 'bride'}
+                className={`gift-tab-btn${activeTab === 'bride' ? ' active bride' : ''}`}
+                onClick={() => switchTab('bride')}
+                id="tab-bride"
+              >
+                <span className="gift-tab-icon">♕</span>
+                Mừng Cô Dâu
+              </button>
+              {/* Sliding indicator */}
+              <span
+                className={`gift-tab-indicator${activeTab === 'bride' ? ' right' : ''}`}
+                aria-hidden="true"
+              />
             </div>
 
-            <div className="gift-modal-grid">
-              {/* Groom */}
-              <div className="gift-card-account">
-                <p className="gift-card-badge groom">Mừng Chú Rể</p>
-                <div className="gift-card-body">
-                  <p className="gift-bank-name">{accounts.groom.bank}</p>
-                  <div className="gift-number-wrap">
-                    <span className="gift-number">{accounts.groom.number}</span>
-                    <button
-                      className="btn-copy-account"
-                      onClick={() => copyToClipboard(accounts.groom.number, 'groom')}
-                      title="Sao chép số tài khoản"
-                      aria-label="Sao chép số tài khoản chú rể"
-                    >
-                      {copiedGroom
-                        ? <Check size={15} className="text-success" />
-                        : <Copy size={15} />}
-                    </button>
-                  </div>
-                  <p className="gift-holder-label">Chủ tài khoản:</p>
-                  <p className="gift-holder-name">{accounts.groom.holder}</p>
+            {/* Card content */}
+            <div
+              className={`gift-modal-card-wrap${animating ? ' gift-tab-exit' : ' gift-tab-enter'}`}
+              aria-labelledby={activeTab === 'groom' ? 'tab-groom' : 'tab-bride'}
+            >
+              <div className={`gift-card-single${activeTab === 'bride' ? ' bride' : ''}`}>
+                {/* Badge */}
+                <div className={`gift-single-badge${activeTab === 'bride' ? ' bride' : ''}`}>
+                  {activeTab === 'groom' ? 'Mừng Chú Rể' : 'Mừng Cô Dâu'}
                 </div>
-              </div>
 
-              {/* Bride */}
-              <div className="gift-card-account">
-                <p className="gift-card-badge bride">Mừng Cô Dâu</p>
-                <div className="gift-card-body">
-                  <p className="gift-bank-name">{accounts.bride.bank}</p>
+                <div className="gift-card-body-single">
+                  <p className="gift-bank-name">{current.bank}</p>
+
                   <div className="gift-number-wrap">
-                    <span className="gift-number">{accounts.bride.number}</span>
+                    <span className="gift-number">{current.number}</span>
                     <button
                       className="btn-copy-account"
-                      onClick={() => copyToClipboard(accounts.bride.number, 'bride')}
+                      onClick={() => copyToClipboard(current.number, copyType)}
                       title="Sao chép số tài khoản"
-                      aria-label="Sao chép số tài khoản cô dâu"
+                      aria-label={`Sao chép số tài khoản ${activeTab === 'groom' ? 'chú rể' : 'cô dâu'}`}
                     >
-                      {copiedBride
+                      {isCopied
                         ? <Check size={15} className="text-success" />
                         : <Copy size={15} />}
                     </button>
                   </div>
+
                   <p className="gift-holder-label">Chủ tài khoản:</p>
-                  <p className="gift-holder-name">{accounts.bride.holder}</p>
+                  <p className="gift-holder-name">{current.holder}</p>
                 </div>
               </div>
             </div>

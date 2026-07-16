@@ -3,12 +3,18 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
 import Divider from './Divider'
 
+import photo1 from '../assets/1.jpg'
+import photo2 from '../assets/2.jpg'
+import photo3 from '../assets/3.jpg'
+import photo4 from '../assets/4.jpg'
+import photo5 from '../assets/5.jpg'
+
 const PHOTOS = [
-  { src: '/src/assets/1.jpg', alt: 'Wedding Photo 1' },
-  { src: '/src/assets/2.jpg', alt: 'Wedding Photo 2' },
-  { src: '/src/assets/3.jpg', alt: 'Wedding Photo 3' },
-  { src: '/src/assets/4.jpg', alt: 'Wedding Photo 4' },
-  { src: '/src/assets/5.jpg', alt: 'Wedding Photo 5' },
+  { src: photo1, alt: 'Wedding Photo 1' },
+  { src: photo2, alt: 'Wedding Photo 2' },
+  { src: photo3, alt: 'Wedding Photo 3' },
+  { src: photo4, alt: 'Wedding Photo 4' },
+  { src: photo5, alt: 'Wedding Photo 5' },
 ]
 
 export default function Gallery() {

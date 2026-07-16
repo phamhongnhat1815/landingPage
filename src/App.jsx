@@ -8,7 +8,6 @@ import Countdown from './components/Countdown'
 import Schedule  from './components/Schedule'
 import Venues    from './components/Venues'
 import Gift      from './components/Gift'
-import RSVP      from './components/RSVP'
 import Contact   from './components/Contact'
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
         <Schedule />
         <Venues />
         <Gift />
-        <RSVP />
         <Contact />
       </main>
     </ToastProvider>

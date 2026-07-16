@@ -1,5 +1,6 @@
 import { Sparkles, GlassWater, Heart } from 'lucide-react'
 import useReveal from '../hooks/useReveal'
+import photo7 from '../assets/7.jpg'
 
 const EVENTS = [
   {
@@ -57,7 +58,7 @@ export default function Schedule() {
 
           {/* Right: photo */}
           <div className="schedule-img-wrap reveal-right" ref={imgRef}>
-            <img src="/src/assets/7.jpg" alt="Ảnh cưới" loading="lazy" />
+            <img src={photo7} alt="Ảnh cưới" loading="lazy" />
             <div className="schedule-badge">
               <p className="schedule-badge-day">24</p>
               <p className="schedule-badge-month">Tháng 07 · 2026</p>

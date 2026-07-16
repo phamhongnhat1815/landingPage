@@ -12,7 +12,7 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const sections = ['gallery', 'schedule', 'venues', 'gift', 'rsvp']
+    const sections = ['gallery', 'schedule', 'venues', 'gift']
     const observerOptions = {
       root: null,
       rootMargin: '-50% 0px -50% 0px', // Trigger active state when section passes through middle of the viewport
@@ -43,7 +43,6 @@ export default function Navbar() {
     { href: '#schedule', label: 'Lịch trình', id: 'schedule' },
     { href: '#venues',   label: 'Địa điểm', id: 'venues' },
     { href: '#gift',     label: 'Mừng Cưới', id: 'gift' },
-    { href: '#rsvp',     label: 'RSVP', id: 'rsvp' },
   ]
 
   return (

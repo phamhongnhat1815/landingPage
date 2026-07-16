@@ -184,7 +184,6 @@
 .hero-bg {
   position: absolute;
   inset: -10%;
-  background-image: url('/src/assets/6.jpg');
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
@@ -1452,6 +1451,127 @@
   .gift-modal { padding: 2.5rem 1.6rem; }
   .gift-modal-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .gift-section { padding: 6rem 0; }
+}
+
+/* ── Gift Modal Tab Switcher ───────────────────────── */
+.gift-modal--tabbed {
+  max-width: 480px;
+  padding: 2.8rem 2.4rem 2.8rem;
+}
+
+.gift-tab-switcher {
+  position: relative;
+  display: flex;
+  border: 1px solid var(--champagne);
+  border-radius: 100px;
+  background: var(--cream);
+  padding: 4px;
+  margin-bottom: 2rem;
+  gap: 4px;
+}
+
+.gift-tab-btn {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: color 0.3s ease;
+}
+.gift-tab-btn.active {
+  color: var(--white);
+}
+.gift-tab-btn.active.bride {
+  color: var(--white);
+}
+.gift-tab-icon {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Sliding pill indicator */
+.gift-tab-indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 6px);
+  height: calc(100% - 8px);
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--deep) 0%, var(--deep-mid) 100%);
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.gift-tab-indicator.right {
+  left: calc(50% + 2px);
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+}
+
+/* Card content area */
+.gift-modal-card-wrap {
+  min-height: 210px;
+}
+
+/* Tab transition animations */
+@keyframes tabSlideIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+@keyframes tabSlideOut {
+  from { opacity: 1; transform: translateY(0)    scale(1); }
+  to   { opacity: 0; transform: translateY(-6px) scale(0.98); }
+}
+
+.gift-tab-enter {
+  animation: tabSlideIn 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.gift-tab-exit {
+  animation: tabSlideOut 0.22s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Single-card layout */
+.gift-card-single {
+  background: var(--white);
+  border: 1px solid var(--champagne);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-align: left;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow 0.4s var(--ease-out);
+}
+.gift-card-single:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.gift-single-badge {
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.75rem 1.2rem;
+  color: var(--white);
+  text-align: center;
+  background: linear-gradient(135deg, var(--deep) 0%, var(--deep-mid) 100%);
+}
+.gift-single-badge.bride {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%);
+}
+
+.gift-card-body-single {
+  padding: 1.6rem 1.4rem;
 }
 
 
