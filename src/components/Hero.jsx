@@ -83,7 +83,7 @@ export default function Hero() {
         <h1 className="hero-names">
           Văn Quang
           <span className="hero-amp">— &amp; —</span>
-          Mỹ Linh
+          Nguyễn Linh
         </h1>
 
         {/* Date & venue */}

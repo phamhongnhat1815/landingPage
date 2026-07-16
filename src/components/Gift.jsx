@@ -13,14 +13,14 @@ export default function Gift() {
 
   const accounts = {
     groom: {
-      bank:   'Ngân hàng Techcombank',
-      number: '1903 5462 8990 12',
-      holder: 'NGUYỄN VĂN HÙNG',
+      bank:   'Ngân hàng Agribank',
+      number: '3590218002471',
+      holder: 'NGUYỄN VĂN QUANG',
     },
     bride: {
-      bank:   'Ngân hàng Vietcombank',
-      number: '1012 3456 78',
-      holder: 'LÊ MỸ LINH',
+      bank:   'Ngân hàng Vietinbank',
+      number: '102887519524',
+      holder: 'NGUYỄN THỊ LINH',
     },
   }
 

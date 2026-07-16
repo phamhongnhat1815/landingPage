@@ -6,7 +6,7 @@ const EVENTS = [
     time:  '22/7',
     icon:  Sparkles,
     name:  'Lễ Nạp Tài',
-    note:  'Nghi thức ăn hỏi, trao lễ vật và nhận lễ vật, đánh dấu lễ cưới chính thức diễn ra.',
+    note:  'Nghi thức ăn hỏi, trao lễ vật và nhận lễ vật diễn ra tại gia đình nhà gái vào lúc 12h30.',
   },
   {
     time:  '23/7',
@@ -18,7 +18,7 @@ const EVENTS = [
     time:  '24/7',
     icon:  Heart,
     name:  'Lễ Thành Hôn',
-    note:  'Nghi thức trao nhẫn và lời thề ước tại sảnh chính.',
+    note:  'Diễn ra tại gia đình nhà trai vào lúc 9 giờ.',
   },
 ]
 
@@ -57,7 +57,7 @@ export default function Schedule() {
 
           {/* Right: photo */}
           <div className="schedule-img-wrap reveal-right" ref={imgRef}>
-            <img src="/src/assets/678.jpg" alt="Ảnh cưới" loading="lazy" />
+            <img src="/src/assets/7.jpg" alt="Ảnh cưới" loading="lazy" />
             <div className="schedule-badge">
               <p className="schedule-badge-day">24</p>
               <p className="schedule-badge-month">Tháng 07 · 2026</p>

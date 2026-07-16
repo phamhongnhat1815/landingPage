@@ -4,16 +4,11 @@ import useReveal from '../hooks/useReveal'
 import Divider from './Divider'
 
 const PHOTOS = [
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 1' },
-  { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 2' },
-  { src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 3' },
-  { src: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 4' },
-  { src: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 5' },
-  { src: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 6' },
-  { src: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 7' },
-  { src: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 8' },
-  { src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 9' },
-  { src: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80', alt: 'Wedding Photo 10' },
+  { src: '/src/assets/1.jpg', alt: 'Wedding Photo 1' },
+  { src: '/src/assets/2.jpg', alt: 'Wedding Photo 2' },
+  { src: '/src/assets/3.jpg', alt: 'Wedding Photo 3' },
+  { src: '/src/assets/4.jpg', alt: 'Wedding Photo 4' },
+  { src: '/src/assets/5.jpg', alt: 'Wedding Photo 5' },
 ]
 
 export default function Gallery() {
