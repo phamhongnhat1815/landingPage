@@ -7,7 +7,7 @@ const VENUES = [
   {
     id:       'bride',
     who:      'Nhà Cô Dâu',
-    name:     'Gia đình Mỹ Linh',
+    name:     'Gia đình Nguyễn Linh',
     iconCls:  'bride',
     address:  'Thôn Quang Hải, Phường Nguyệt Viên, tỉnh Thanh Hoá',
     mapSrc:   'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.2148723609594!2d105.8359722!3d19.8039722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDQ4JzE0LjMiTiAxMDXCsDUwJzA5LjUiRQ!5e1!3m2!1svi!2s!4v1782378515822!5m2!1svi!2s',
